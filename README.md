@@ -67,16 +67,18 @@ Includes common commands, `zeek-cut` usage, and pipeline examples with UNIX util
 
     Cross-check suspicious indicators (IPs, domains, URIs) against threat intel feeds.
 
-**References**
+
+
+**Summary:**
+
+Zeek is a powerful tool for SOC analysts and incident responders.
+Mastering zeek-cut and combining it with UNIX commands allows rapid extraction of IoCs and detection of suspicious network activity.
+
+**References:**
 
 Zeek Documentation
 
 TryHackMe: Zeek Room
-
-Summary:
-
-Zeek is a powerful tool for SOC analysts and incident responders.
-Mastering zeek-cut and combining it with UNIX commands allows rapid extraction of IoCs and detection of suspicious network activity.
 
 **Made by: Xavier Mota**
 **19/08/2025**
