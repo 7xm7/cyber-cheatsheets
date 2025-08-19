@@ -6,7 +6,7 @@ Includes common commands, `zeek-cut` usage, and pipeline examples with UNIX util
 ---
 
 ## 1. Running Zeek on PCAPs
-```bash
+
 zeek -r file.pcap
 
 Generates multiple logs (e.g. conn.log, dns.log, http.log, ssl.log, weird.log).
