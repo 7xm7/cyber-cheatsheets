@@ -67,9 +67,9 @@ Includes common commands, `zeek-cut` usage, and pipeline examples with UNIX util
 
     Cross-check suspicious indicators (IPs, domains, URIs) against threat intel feeds.
 
-**#7. References**
+**References**
 
-    Zeek Documentation
+Zeek Documentation
 
 TryHackMe: Zeek Room
 
@@ -81,4 +81,4 @@ Mastering zeek-cut and combining it with UNIX commands allows rapid extraction o
 **Made by: Xavier Mota**
 **19/08/2025**
 
-Fell free to use!
+Feel free to use!
