@@ -11,7 +11,7 @@ zeek -r file.pcap
 
 Generates multiple logs (e.g. conn.log, dns.log, http.log, ssl.log, weird.log).
 
-**## 2. Inspecting Logs**
+## 2. Inspecting Logs
 
 Use zeek-cut to extract specific fields from logs.
 
