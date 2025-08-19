@@ -7,17 +7,15 @@ Includes common commands, `zeek-cut` usage, and pipeline examples with UNIX util
 
 **# 1. Running Zeek on PCAPs**
 
-zeek -r file.pcap
+    zeek -r file.pcap
 
-Generates multiple logs (e.g. conn.log, dns.log, http.log, ssl.log, weird.log).
+    Generates multiple logs (e.g. conn.log, dns.log, http.log, ssl.log, weird.log).
 
 **# 2. Inspecting Logs**
 
-Use zeek-cut to extract specific fields from logs.
+    Use zeek-cut to extract specific fields from logs.
 
-Example: show all fields
-
-cat conn.log | zeek-cut -d
+    Example: show all fields → cat conn.log | zeek-cut -d
 
 **#3. Common Log Files**
 
@@ -35,29 +33,17 @@ cat conn.log | zeek-cut -d
 
 **#4. Useful Commands**
 
-Extract Source and Destination IPs
+    Extract Source and Destination IPs: cat conn.log | zeek-cut id.orig_h id.resp_h
 
-cat conn.log | zeek-cut id.orig_h id.resp_h
+    Count Unique IPs: cat conn.log | zeek-cut id.orig_h | sort | uniq -c | sort -nr
 
-Count Unique IPs
+    Show DNS Queries: cat dns.log | zeek-cut query qtype_name
 
-cat conn.log | zeek-cut id.orig_h | sort | uniq -c | sort -nr
+    Count DNS Requests by Domain: cat dns.log | zeek-cut query | sort | uniq -c | sort -nr
 
-Show DNS Queries
+    Find Malicious Executable Downloads: cat http.log | zeek-cut id.orig_h host uri | grep ".exe"
 
-cat dns.log | zeek-cut query qtype_name
-
-Count DNS Requests by Domain
-
-cat dns.log | zeek-cut query | sort | uniq -c | sort -nr
-
-Find Malicious Executable Downloads
-
-cat http.log | zeek-cut id.orig_h host uri | grep ".exe"
-
-Extract SSL Certificate Subjects
-
-cat ssl.log | zeek-cut id.resp_h subject issuer
+    Extract SSL Certificate Subjects: cat ssl.log | zeek-cut id.resp_h subject issuer
 
 **#5. Combining with UNIX Tools**
 
@@ -69,9 +55,7 @@ cat ssl.log | zeek-cut id.resp_h subject issuer
 
     head → display top results
 
-Example: Top 10 requested domains
-
-cat dns.log | zeek-cut query | sort | uniq -c | sort -nr | head -10
+    Example: Top 10 requested domains: cat dns.log | zeek-cut query | sort | uniq -c | sort -nr | head -10
 
 **#6. Workflow Tips**
 
@@ -88,7 +72,13 @@ cat dns.log | zeek-cut query | sort | uniq -c | sort -nr | head -10
     Zeek Documentation
 
 TryHackMe: Zeek Room
-Summary
+
+Summary:
 
 Zeek is a powerful tool for SOC analysts and incident responders.
 Mastering zeek-cut and combining it with UNIX commands allows rapid extraction of IoCs and detection of suspicious network activity.
+
+**Made by: Xavier Mota**
+**19/08/2025**
+
+Fell free to use!
